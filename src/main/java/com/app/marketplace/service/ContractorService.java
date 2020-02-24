@@ -1,7 +1,7 @@
 package com.app.marketplace.service;
 
-import com.app.marketplace.dao.model.Bids;
-import com.app.marketplace.dao.model.Contractor;
+import com.app.marketplace.dao.Bids;
+import com.app.marketplace.dao.Contractor;
 import com.app.marketplace.model.BidDTO;
 import com.app.marketplace.model.ContractorDTO;
 

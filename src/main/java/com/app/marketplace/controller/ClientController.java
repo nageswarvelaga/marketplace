@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.marketplace.Constants;
-import com.app.marketplace.dao.model.Project;
+import com.app.marketplace.dao.Project;
 import com.app.marketplace.exception.DataNotFoundException;
 import com.app.marketplace.exception.RequestFormatException;
 import com.app.marketplace.model.ErrorDTO;

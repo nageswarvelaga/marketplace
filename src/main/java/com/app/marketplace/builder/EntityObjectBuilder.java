@@ -6,9 +6,9 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
-import com.app.marketplace.dao.model.Bids;
-import com.app.marketplace.dao.model.Contractor;
-import com.app.marketplace.dao.model.Project;
+import com.app.marketplace.dao.Bids;
+import com.app.marketplace.dao.Contractor;
+import com.app.marketplace.dao.Project;
 import com.app.marketplace.exception.RequestFormatException;
 import com.app.marketplace.model.BidDTO;
 import com.app.marketplace.model.ContractorDTO;

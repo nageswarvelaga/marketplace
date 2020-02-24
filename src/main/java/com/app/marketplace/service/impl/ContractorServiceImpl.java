@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.marketplace.builder.EntityObjectBuilder;
-import com.app.marketplace.dao.model.Bids;
-import com.app.marketplace.dao.model.Contractor;
+import com.app.marketplace.dao.Bids;
+import com.app.marketplace.dao.Contractor;
 import com.app.marketplace.model.BidDTO;
 import com.app.marketplace.model.ContractorDTO;
 import com.app.marketplace.repository.BidRepository;

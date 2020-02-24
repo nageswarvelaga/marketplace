@@ -1,4 +1,4 @@
-package com.app.marketplace.dao.model;
+package com.app.marketplace.dao;
 
 import java.util.Date;
 

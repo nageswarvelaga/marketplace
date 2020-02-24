@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.app.marketplace.Constants;
 import com.app.marketplace.builder.EntityObjectBuilder;
-import com.app.marketplace.dao.model.Project;
+import com.app.marketplace.dao.Project;
 import com.app.marketplace.exception.DataNotFoundException;
 import com.app.marketplace.exception.RequestFormatException;
 import com.app.marketplace.model.ProjectDTO;

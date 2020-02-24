@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.marketplace.Constants;
-import com.app.marketplace.dao.model.Bids;
-import com.app.marketplace.dao.model.Project;
+import com.app.marketplace.dao.Bids;
+import com.app.marketplace.dao.Project;
 import com.app.marketplace.exception.DataNotFoundException;
 import com.app.marketplace.repository.BidRepository;
 import com.app.marketplace.repository.ProjectRepository;

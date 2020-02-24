@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.app.marketplace.dao.model.Bids;
+import com.app.marketplace.dao.Bids;
 
 @Repository
 public interface BidRepository extends JpaRepository<Bids, Integer> {
