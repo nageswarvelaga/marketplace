@@ -13,6 +13,8 @@ public class Constants {
 
     public static final String CONTRACTOR_NOT_CREATED = "Contractor Not Created";
 
+    public static final String NO_BIDS_FOR_THE_CONTRACTOR = "No Bids found for the contractor";
+
     public static final String BID_NOT_CREATED = "Bid Not Accepted";
 
     public static final String INCORRECT_INPUT = "Incorrect Input";

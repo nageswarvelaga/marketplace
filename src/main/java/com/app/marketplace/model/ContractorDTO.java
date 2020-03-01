@@ -1,9 +1,16 @@
 package com.app.marketplace.model;
 
+import javax.validation.constraints.NotBlank;
+
+import org.springframework.stereotype.Component;
+
+@Component
 public class ContractorDTO {
 
+    @NotBlank
     public String name;
 
+    @NotBlank
     public String address;
 
     public String getName() {

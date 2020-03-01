@@ -17,7 +17,14 @@ public interface BidRepository extends JpaRepository<Bids, Integer> {
 
     public static final String GET_BIDS_QUERY = "from Bids b where b.projectId=?1 AND creationDate <=?2";
 
+    public static final String GET_BIDS_FOR_CONTRACTOR_PROJECT = "from Bids b where b.contractorId=?1 AND b.projectId=?2";
+
     List<Bids> findByProjectId(Integer projectId);
+
+    List<Bids> findByContractorId(Integer contractorId);
+
+    @Query(GET_BIDS_FOR_CONTRACTOR_PROJECT)
+    List<Bids> findByContractorIdAndProjectId(Integer contractorId, Integer projectId);
 
     @Query(AUTO_BIDDING_QUERY)
     List<Bids> findByProjectIdAndMinBidAmount(Integer projectId, Integer bidAmount);

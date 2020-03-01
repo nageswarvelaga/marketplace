@@ -1,4 +1,4 @@
-package com.marketplace.marketplace;
+package com.app.marketplace;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,6 +7,7 @@ class MarketplaceApplicationTests {
 
     //@Test
     void contextLoads() {
+
     }
 
 }

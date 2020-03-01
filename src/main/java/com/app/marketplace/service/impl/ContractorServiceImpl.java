@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.marketplace.Constants;
 import com.app.marketplace.builder.EntityObjectBuilder;
 import com.app.marketplace.dao.Bids;
 import com.app.marketplace.dao.Contractor;
+import com.app.marketplace.exception.DataNotFoundException;
 import com.app.marketplace.model.BidDTO;
 import com.app.marketplace.model.ContractorDTO;
 import com.app.marketplace.repository.BidRepository;
@@ -46,6 +48,21 @@ public class ContractorServiceImpl implements ContractorService {
         for (final Bids bid : bidsList) {
             bidRepository.save(entityObjectBuilder.buildBidEntity(bid));
         }
+    }
+
+    @Override
+    public List<Bids> getAllBids(Integer contractorId, Integer projectId) throws DataNotFoundException {
+        List<Bids> bids;
+
+        if (projectId != null) {
+            bids = bidRepository.findByContractorIdAndProjectId(contractorId, projectId);
+        } else {
+            bids = bidRepository.findByContractorId(contractorId);
+        }
+        if (bids == null || bids.isEmpty()) {
+            new DataNotFoundException(Constants.NO_BIDS_FOR_THE_CONTRACTOR);
+        }
+        return bids;
     }
 
 }

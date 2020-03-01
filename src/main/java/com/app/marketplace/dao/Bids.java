@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.Persistent;
@@ -18,10 +19,13 @@ public class Bids {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer bidId;
 
+    @NotNull
     Integer projectId;
 
+    @NotNull
     Integer contractorId;
 
+    @NotNull
     Integer bidAmount;
 
     Integer duration;

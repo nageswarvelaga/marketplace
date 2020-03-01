@@ -1,13 +1,19 @@
 package com.app.marketplace.model;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class BidDTO {
+
+    @NotNull
     Integer projectId;
 
+    @NotNull
     Integer contractorId;
 
+    @NotNull
     Integer bidAmount;
 
     Integer duration;

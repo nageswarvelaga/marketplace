@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Contractor {
@@ -12,8 +13,10 @@ public class Contractor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
+    @NotNull
     String name;
 
+    @NotNull
     String address;
 
     public Integer getId() {

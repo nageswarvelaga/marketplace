@@ -1,5 +1,7 @@
 package com.app.marketplace.model;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -7,10 +9,13 @@ public class ProjectDTO {
 
     Integer id;
 
+    @NotNull
     String description;
 
+    @NotNull
     Integer budget;
 
+    @NotNull
     String lastDate;
 
     public Integer getId() {
