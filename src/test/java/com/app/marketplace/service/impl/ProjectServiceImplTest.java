@@ -8,29 +8,32 @@ import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.mockito.MockitoAnnotations;
 
 import com.app.marketplace.dao.Bids;
 import com.app.marketplace.dao.Project;
 import com.app.marketplace.repository.BidRepository;
 import com.app.marketplace.repository.ProjectRepository;
-import com.app.marketplace.service.ProjectService;
 
 public class ProjectServiceImplTest {
 
-    @Autowired
-    private ProjectService projectService;
+    @InjectMocks
+    private ProjectServiceImpl projectService;
 
-    @MockBean
+    @Mock
     private ProjectRepository projectRepository;
 
-    @MockBean
+    @Mock
     private BidRepository bidRepository;
 
     @BeforeEach
     public void setup() {
+        MockitoAnnotations.initMocks(this);
+
         final Project project = new Project();
         project.setId(1);
         project.setDescription("Test");
@@ -50,8 +53,8 @@ public class ProjectServiceImplTest {
         Mockito.when(bidRepository.findByProjectIdAndCreationDate(1, project.getLastDate())).thenReturn(bids);
     }
 
-    public void getLowestBidAmountTest() {
-
+    @Test
+    public void getLowestBidAmountTest_Positive() {
         final Bids bid = projectService.getLowestBidAmount(1);
 
         assertEquals(100, bid.getBidAmount());
