@@ -35,7 +35,7 @@ public class ProjectController {
             final Project project = projectService.createProject(projectDTO);
             responseEntity = ResponseEntity.status(HttpStatus.OK).body(project);
         } catch (final RequestFormatException ex) {
-            responseEntity = ResponseEntity.status(HttpStatus.OK).body(new ErrorDTO(Constants.INCORRECT_INPUT, ex.getMessage()));
+            responseEntity = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorDTO(Constants.INCORRECT_INPUT, ex.getMessage()));
         }
 
         return responseEntity;
@@ -53,7 +53,7 @@ public class ProjectController {
         try {
             responseEntity = ResponseEntity.status(HttpStatus.OK).body(projectService.getProject(id));
         } catch (final DataNotFoundException ex) {
-            responseEntity = ResponseEntity.status(HttpStatus.OK).body(new ErrorDTO(Constants.DATA_NOT_FOUND, ex.getMessage()));
+            responseEntity = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorDTO(Constants.DATA_NOT_FOUND, ex.getMessage()));
         }
 
         return responseEntity;
@@ -65,7 +65,7 @@ public class ProjectController {
         try {
             responseEntity = ResponseEntity.status(HttpStatus.OK).body(projectService.getAllBids(id));
         } catch (final DataNotFoundException ex) {
-            responseEntity = ResponseEntity.status(HttpStatus.OK).body(new ErrorDTO(Constants.DATA_NOT_FOUND, ex.getMessage()));
+            responseEntity = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorDTO(Constants.DATA_NOT_FOUND, ex.getMessage()));
         }
 
         return responseEntity;
@@ -78,7 +78,7 @@ public class ProjectController {
         try {
             responseEntity = ResponseEntity.status(HttpStatus.OK).body(projectService.getLowestBidAmount(id));
         } catch (final DataNotFoundException ex) {
-            responseEntity = ResponseEntity.status(HttpStatus.OK).body(new ErrorDTO(Constants.DATA_NOT_FOUND, ex.getMessage()));
+            responseEntity = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorDTO(Constants.DATA_NOT_FOUND, ex.getMessage()));
         }
 
         return responseEntity;

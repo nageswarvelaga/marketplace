@@ -52,7 +52,7 @@ public class ContractorController {
         try {
             responseEntity = ResponseEntity.status(HttpStatus.OK).body(contractorService.getAllBids(contractorId, projectId));
         } catch (final DataNotFoundException ex) {
-            responseEntity = ResponseEntity.status(HttpStatus.OK).body(new ErrorDTO(Constants.DATA_NOT_FOUND, ex.getMessage()));
+            responseEntity = ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorDTO(Constants.DATA_NOT_FOUND, ex.getMessage()));
         }
         return responseEntity;
     }
